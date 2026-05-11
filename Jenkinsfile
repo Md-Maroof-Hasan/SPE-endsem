@@ -30,13 +30,16 @@ pipeline {
         }
         stage('OWASP Dependency Check') {
             steps {
-                 sh '''
-       		 /opt/dependency-check/bin/dependency-check.sh \
-       		 --project secure-notes-api \
-       		 --scan . \
-       		 --format HTML \
-       		 --out dependency-check-report
-       		 '''
+                sh '''
+                /opt/dependency-check/bin/dependency-check.sh \
+                --project secure-notes-api \
+                --scan auth-service \
+                --scan notes-service \
+                --scan audit-service \
+                --format HTML \
+                --out dependency-check-report \
+                --noupdate
+                '''
                 }
         }
         stage('Build Docker Image') {
