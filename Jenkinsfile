@@ -28,6 +28,11 @@ pipeline {
                 }
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t auth-service ./auth-service'
+            }
+        }
         stage('Trivy Scan') {
             steps {
                 sh 'trivy image auth-service'
