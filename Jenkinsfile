@@ -37,6 +37,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t auth-service ./auth-service'
+                sh 'docker build -t notes-service ./notes-service'
+                sh 'docker build -t audit-service ./audit-service'
             }
         }
         stage('Trivy Scan') {
