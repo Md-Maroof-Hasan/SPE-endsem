@@ -4,13 +4,11 @@ services:
 
   auth-service:
     build: ./auth-service
-    container_name: auth-service
     ports:
       - "5001:5001"
 
   notes-service:
     build: ./notes-service
-    container_name: notes-service
     ports:
       - "5002:5002"
     depends_on:
@@ -19,13 +17,11 @@ services:
 
   audit-service:
     build: ./audit-service
-    container_name: audit-service
     ports:
       - "5003:5003"
 
   nginx:
-    image: nginx:latest
-    container_name: nginx
+    image: nginx:latest 
     ports:
       - "80:80"
     volumes:
