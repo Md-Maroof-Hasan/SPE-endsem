@@ -33,12 +33,13 @@ pipeline {
                 sh '''
                 /opt/dependency-check/bin/dependency-check.sh \
                 --project secure-notes-api \
-                --scan auth-service \
-                --scan notes-service \
-                --scan audit-service \
+                --scan auth-service/requirements.txt \
+                --scan notes-service/requirements.txt \
+                --scan audit-service/requirements.txt \
                 --format HTML \
                 --out dependency-check-report \
-                --noupdate
+                --noupdate \
+                --disableAssembly
                 '''
                 }
         }
