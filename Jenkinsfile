@@ -28,24 +28,15 @@ pipeline {
                 }
             }
         }
-        stage('OWASP Dependency Check') {
+        stage('OWASP ZAP Scan') {
             steps {
                 sh '''
-                /opt/dependency-check/bin/dependency-check.sh \
-                --project secure-notes-api \
-                --scan auth-service/requirements.txt \
-                --scan notes-service/requirements.txt \
-                --scan audit-service/requirements.txt \
-                --format HTML \
-                --out dependency-check-report \
-                --noupdate \
-                --disableAssembly \
-                --disableNodeJS \
-                --disableRetireJS \
-                --disablePyDist \
-                --disablePyPkg
+                docker run --rm \
+                --network host \
+                zaproxy/zap-stable zap-baseline.py \
+                -t http://localhost/auth
                 '''
-                }
+            }
         }
         stage('Build Docker Image') {
             steps {
