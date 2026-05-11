@@ -28,16 +28,6 @@ pipeline {
                 }
             }
         }
-        stage('OWASP ZAP Scan') {
-            steps {
-                sh '''
-                docker run --rm \
-                --network host \
-                zaproxy/zap-stable zap-baseline.py \
-                -t http://localhost/auth
-                '''
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t auth-service ./auth-service'
@@ -55,6 +45,16 @@ pipeline {
         stage('Deploy Containers') {
             steps {
                 sh 'docker compose up -d --build'
+            }
+        }
+        stage('OWASP ZAP Scan') {
+            steps {
+                sh '''
+                docker run --rm \
+                --network host \
+                zaproxy/zap-stable zap-baseline.py \
+                -t http://localhost/auth
+                '''
             }
         }
     }
