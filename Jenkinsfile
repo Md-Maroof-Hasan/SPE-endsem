@@ -11,17 +11,18 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonarqube') {
-                    sh '''
-                    sonar-scanner \
-                    -Dsonar.projectKey=secure-notes-api \
-                    -Dsonar.sources=. \
-                    -Dsonar.host.url=http://sonarqube:9000 \
-                    -Dsonar.login=$sqp_860f4ba0d268e691421164894805535166aec8ac
-                    '''
-                }
-            }
-        }
-    }
+ 	   steps {
+       		 script {
+          	 	 def scannerHome = tool 'sonar-scanner'
+        	 	 withSonarQubeEnv('sonarqube') {
+              		 	 sh """
+               			 ${scannerHome}/bin/sonar-scanner \
+               			 -Dsonar.projectKey=secure-notes-api \
+               			 -Dsonar.sources=. \
+               			 -Dsonar.host.url=http://sonarqube:9000
+               			 """
+           			 }
+       			 }
+   		 }
+	}
 }
