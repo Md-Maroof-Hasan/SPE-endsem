@@ -36,6 +36,8 @@ pipeline {
         stage('Trivy Scan') {
             steps {
                 sh 'trivy image auth-service'
+                sh 'trivy image notes-service'
+                sh 'trivy image audit-service'
             }
         }
         stage('Deploy Containers') {
