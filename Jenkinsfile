@@ -53,7 +53,7 @@ pipeline {
                 docker run --rm \
                 --network host \
                 zaproxy/zap-stable zap-baseline.py \
-                -t http://localhost/auth
+                -t http://localhost:5001
                 '''
             }
         }
