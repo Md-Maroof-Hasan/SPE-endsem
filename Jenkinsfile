@@ -28,5 +28,10 @@ pipeline {
                 }
             }
         }
+        stage('Trivy Scan') {
+            steps {
+                sh 'trivy image auth-service'
+            }
+        }
     }
 }
