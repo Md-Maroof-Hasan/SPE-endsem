@@ -1,25 +1,19 @@
-version: '3'
-
 services:
 
   auth-service:
     build: ./auth-service
-    container_name: auth-service
 
   notes-service:
     build: ./notes-service
-    container_name: notes-service
     depends_on:
       - auth-service
       - audit-service
 
   audit-service:
     build: ./audit-service
-    container_name: audit-service
 
   nginx:
     image: nginx:latest
-    container_name: nginx
     ports:
       - "80:80"
     volumes:
