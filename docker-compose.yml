@@ -17,14 +17,6 @@ services:
     build: ./audit-service
     container_name: audit-service
 
-  sonarqube:
-    image: sonarqube:community
-    container_name: sonarqube
-    ports:
-      - "9000:9000"
-    environment:
-      SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: "true"
-
   nginx:
     image: nginx:latest
     container_name: nginx
