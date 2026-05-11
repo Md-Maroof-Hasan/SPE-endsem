@@ -48,14 +48,12 @@ pipeline {
             }
         }
         stage('OWASP ZAP Scan') {
-            steps {
-                sh '''
-                docker run --rm \
-                --network host \
-                zaproxy/zap-stable zap-baseline.py \
-                -t http://localhost:5001
-                '''
-            }
-        }
+ 	   steps {
+       		 sh '''
+       		 docker run --rm --network host zaproxy/zap-stable \
+       		 zap-baseline.py -t http://localhost
+       		 '''
+   	    }
+	}
     }
 }
