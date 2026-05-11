@@ -4,21 +4,35 @@ services:
 
   auth-service:
     build: ./auth-service
-    ports:
-      - "5001:5001"
+    container_name: auth-service
 
   notes-service:
     build: ./notes-service
-    ports:
-      - "5002:5002"
+    container_name: notes-service
     depends_on:
       - auth-service
       - audit-service
 
   audit-service:
     build: ./audit-service
-    ports:
-      - "5003:5003"
+    container_name: audit-service
 
-volumes:
-  jenkins_home:
+  sonarqube:
+    image: sonarqube:community
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    environment:
+      SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: "true"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - auth-service
+      - notes-service
+      - audit-service
