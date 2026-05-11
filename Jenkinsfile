@@ -38,5 +38,10 @@ pipeline {
                 sh 'trivy image auth-service'
             }
         }
+        stage('Deploy Containers') {
+            steps {
+                sh 'docker compose up -d --build'
+            }
+        }
     }
 }
