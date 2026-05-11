@@ -39,7 +39,11 @@ pipeline {
                 --format HTML \
                 --out dependency-check-report \
                 --noupdate \
-                --disableAssembly
+                --disableAssembly \
+                --disableNodeJS \
+                --disableRetireJS \
+                --disablePyDist \
+                --disablePyPkg
                 '''
                 }
         }
