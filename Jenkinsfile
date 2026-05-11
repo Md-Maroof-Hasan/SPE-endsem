@@ -28,6 +28,12 @@ pipeline {
                 }
             }
         }
+        stage('OWASP Dependency Check') {
+            steps {
+                dependencyCheck additionalArguments: '--scan .',
+                odcInstallation: 'dependency-check'
+                }
+        }
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t auth-service ./auth-service'
