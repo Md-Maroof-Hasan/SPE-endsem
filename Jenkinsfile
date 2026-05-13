@@ -96,7 +96,7 @@ pipeline {
     		}
 
    	 failure {
-        	mail to: 'md.amroofhsnz@gmail.com, piyushsinghcu@gmail.com',
+        	mail to: 'md.maroofhsnz@gmail.com, piyushsinghcu@gmail.com',
         	subject: "FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
         	body: """
 			Pipeline execution failed.
