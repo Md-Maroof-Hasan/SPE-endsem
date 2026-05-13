@@ -343,39 +343,6 @@ with:
 * File structure 
 ---
 
-# How to Run the Project
-
-## Start Infrastructure
-
-```bash
-sudo systemctl start docker
-minikube start
-```
-
----
-
-## Start Monitoring Stack
-
-```bash
-docker compose -f monitoring-compose.yml up -d
-```
-
----
-
-## Run Jenkins Pipeline
-
-Push changes to GitHub:
-
-```bash
-git add .
-git commit -m "update"
-git push
-```
-
-The Jenkins pipeline will automatically trigger.
-
----
-
 # Future Improvements
 
 Possible future enhancements:
