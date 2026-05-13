@@ -310,10 +310,15 @@ with:
 
 # Screenshots included
 <img width="1798" height="904" alt="image" src="https://github.com/user-attachments/assets/91c73c6c-451c-47b4-9b9b-7be9a9e013c2" />
-
 * Jenkins pipeline
+
+  <img width="1798" height="958" alt="image" src="https://github.com/user-attachments/assets/bd444f88-4bb0-4c64-9bc1-a440575804e7" />
 * SonarQube dashboard
+
+<img width="1809" height="831" alt="image" src="https://github.com/user-attachments/assets/d64ad960-f3d0-4630-97b1-f38170fb9711" />
+<img width="1809" height="831" alt="image" src="https://github.com/user-attachments/assets/40498dea-a6f7-413e-8c3a-11007b5f5664" />
 * Grafana dashboards
+
 * Kubernetes pods
 * OWASP ZAP scan
 * Fail2Ban banning demonstration
