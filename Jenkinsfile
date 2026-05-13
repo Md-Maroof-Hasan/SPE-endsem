@@ -71,4 +71,35 @@ pipeline {
    	    }
 	}
     }
+
+    post {
+
+   	 success {
+       		 mail to: 'md.maroofhsnz@gmail.com, person2@gmail.com',
+       		 subject: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER}",
+       		 body: """
+			Pipeline executed successfully.
+
+			Job: ${JOB_NAME}
+			Build Number: ${BUILD_NUMBER}
+			Build URL: ${BUILD_URL}
+
+			All security scans and deployment stages passed successfully.
+			"""
+    		}
+
+   	 failure {
+        	mail to: 'md.amroofhsnz@gmail.com, person2@gmail.com',
+        	subject: "FAILURE: ${JOB_NAME} #${BUILD_NUMBER}",
+        	body: """
+			Pipeline execution failed.
+
+			Job: ${JOB_NAME}
+			Build Number: ${BUILD_NUMBER}
+			Build URL: ${BUILD_URL}
+
+			Please check Jenkins logs for failure details.
+		        """
+   		 }
+   	 }
 }
