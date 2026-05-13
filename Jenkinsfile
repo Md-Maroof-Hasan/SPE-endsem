@@ -54,7 +54,7 @@ pipeline {
 	}
         stage('Deploy Containers') {
             steps {
-                sh 'ansible-playbook -i ansible/inventory.ini ansible/deploy.yml --vault-password-file /var/jenkins_home/.vault_pass.txt'
+                sh 'ansible-playbook -i ansible/inventory.ini ansible/deploy.yml --vault-password-file /var/lib/jenkins/.vault_pass.txt'
             }
         }
         stage('OWASP ZAP Scan') {
