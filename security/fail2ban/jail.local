@@ -1,0 +1,13 @@
+[nginx-abuse]
+
+enabled = true
+port = http,https
+filter = nginx-abuse
+
+logpath = /home/mohammad-maroof/Documents/SPE_/Project/nginx/logs/access.log
+
+backend = polling
+
+maxretry = 10
+findtime = 60
+bantime = 300

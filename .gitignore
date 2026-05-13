@@ -1,2 +1,17 @@
+# Vault password
 .vault_pass.txt
+
+# Logs
+*.log
+nginx/logs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Kubernetes config
+.kube/
+
+# Environment files
+.env
 
