@@ -61,7 +61,7 @@ pipeline {
  	   steps {
        		 sh '''
        		 docker run --rm --network host zaproxy/zap-stable \
-       		 zap-baseline.py -I -t http://localhost
+       		 zap-baseline.py -I -t http://192.168.49.2:30843
        		 '''
    	    }
 	}
