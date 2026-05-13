@@ -83,13 +83,13 @@ pipeline {
 
    	 success {
        		 mail to: 'md.maroofhsnz@gmail.com, piyushsinghcu@gmail.com',
-       		 subject: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER}",
+       		 subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
        		 body: """
 			Pipeline executed successfully.
 
-			Job: ${JOB_NAME}
-			Build Number: ${BUILD_NUMBER}
-			Build URL: ${BUILD_URL}
+			Job: ${env.JOB_NAME}
+			Build Number: ${env.BUILD_NUMBER}
+			Build URL: ${env.BUILD_URL}
 
 			All security scans and deployment stages passed successfully.
 			"""
@@ -97,13 +97,13 @@ pipeline {
 
    	 failure {
         	mail to: 'md.amroofhsnz@gmail.com, piyushsinghcu@gmail.com',
-        	subject: "FAILURE: ${JOB_NAME} #${BUILD_NUMBER}",
+        	subject: "FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
         	body: """
 			Pipeline execution failed.
 
-			Job: ${JOB_NAME}
-			Build Number: ${BUILD_NUMBER}
-			Build URL: ${BUILD_URL}
+			Job: ${env.JOB_NAME}
+			Build Number: ${env.BUILD_NUMBER}
+			Build URL: ${env.BUILD_URL}
 
 			Please check Jenkins logs for failure details.
 		        """
