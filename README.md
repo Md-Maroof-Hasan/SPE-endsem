@@ -375,7 +375,7 @@ This project demonstrates practical implementation of:
 
 # Authors
 Md Maroof Hasan Khan and Piyush Singh
-Developed as part of the Software Production Engineering (SPE) course project.
+developed it as part of their Software Production Engineering (SPE) course project.
 
 ---
 
