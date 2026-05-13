@@ -42,16 +42,16 @@ pipeline {
                 sh 'trivy image --exit-code 1 --severity CRITICAL audit-service'
             }
         }
-	stage('Debug Jenkins Path') {
-   	     steps {
-       		 sh 'whoami'
-       		 sh 'pwd'
-       		 sh 'ls -la /'
-       		 sh 'ls -la /var'
-       		 sh 'ls -la /var/jenkins_home'
-       		 sh 'find / -name ".vault_pass.txt" 2>/dev/null'
-       	    }
-	}
+//	stage('Debug Jenkins Path') {
+//   	     steps {
+//       		 sh 'whoami'
+//       		 sh 'pwd'
+//       		 sh 'ls -la /'
+//       		 sh 'ls -la /var'
+//       		 sh 'ls -la /var/jenkins_home'
+//       		 sh 'find / -name ".vault_pass.txt" 2>/dev/null'
+//       	    }
+//	}
         stage('Deploy Containers') {
             steps {
                 sh 'ansible-playbook -i ansible/inventory.ini ansible/deploy.yml --vault-password-file /var/lib/jenkins/.vault_pass.txt'
