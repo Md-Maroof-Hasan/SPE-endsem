@@ -28,6 +28,11 @@ pipeline {
                 }
             }
         }
+	stage('GitLeaks Scan') {
+   	    steps {
+       		 sh 'gitleaks detect --source .'
+   	     }
+	}
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t auth-service ./auth-service'
