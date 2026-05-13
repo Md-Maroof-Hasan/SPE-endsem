@@ -308,9 +308,8 @@ with:
 
 ---
 
-# Screenshots to Include
-
-You can add screenshots for:
+# Screenshots included
+<img width="1798" height="904" alt="image" src="https://github.com/user-attachments/assets/91c73c6c-451c-47b4-9b9b-7be9a9e013c2" />
 
 * Jenkins pipeline
 * SonarQube dashboard
