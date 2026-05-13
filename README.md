@@ -23,6 +23,9 @@ The entire workflow is integrated using Jenkins pipelines triggered automaticall
 
 # Architecture
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/0181bd97-ece1-461d-b1f8-6e739ade1076" />
+
+
 ## Microservices
 
 The application consists of three independent services:
@@ -334,6 +337,59 @@ with:
 <img width="1470" height="860" alt="image" src="https://github.com/user-attachments/assets/cc98a277-95a4-4b96-8dc0-732b50a3f305" />
 * Loki logs in Grafana
 
+
+
+.
+├── ansible
+│   ├── deploy.yml
+│   ├── inventory.ini
+│   ├── roles
+│   │   └── kubernetes
+│   │       ├── files
+│   │       │   └── k8s
+│   │       │       ├── audit-deployment.yml
+│   │       │       ├── auth-deployment.yml
+│   │       │       ├── hpa.yml
+│   │       │       ├── notes-deployment.yml
+│   │       │       └── services.yml
+│   │       └── tasks
+│   │           └── main.yml
+│   └── secrets.yml
+├── audit-service
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── auth-service
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── docker-compose.yml
+├── infrastructure-compose.yml
+├── Jenkinsfile
+├── logging
+│   ├── loki
+│   │   └── loki-config.yml
+│   └── promtail
+│       └── promtail-config.yml
+├── monitoring
+│   └── prometheus.yml
+├── monitoring-compose.yml
+├── nginx
+│   ├── logs
+│   │   ├── access.log
+│   │   └── error.log
+│   └── nginx.conf
+├── notes-service
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── README.md
+└── security
+    └── fail2ban
+        ├── jail.local
+        └── nginx-abuse.conf
+
+* File structure 
 ---
 
 # How to Run the Project
