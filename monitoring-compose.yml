@@ -32,6 +32,7 @@ services:
       - ./logging/promtail/promtail-config.yml:/etc/promtail/config.yml
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./nginx/logs:/nginxlogs:ro  
     command: -config.file=/etc/promtail/config.yml
 
   cadvisor:
