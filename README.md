@@ -312,16 +312,26 @@ with:
 <img width="1798" height="904" alt="image" src="https://github.com/user-attachments/assets/91c73c6c-451c-47b4-9b9b-7be9a9e013c2" />
 * Jenkins pipeline
 
+
   <img width="1798" height="958" alt="image" src="https://github.com/user-attachments/assets/bd444f88-4bb0-4c64-9bc1-a440575804e7" />
 * SonarQube dashboard
+
 
 <img width="1809" height="831" alt="image" src="https://github.com/user-attachments/assets/d64ad960-f3d0-4630-97b1-f38170fb9711" />
 <img width="1809" height="831" alt="image" src="https://github.com/user-attachments/assets/40498dea-a6f7-413e-8c3a-11007b5f5664" />
 * Grafana dashboards
 
+<img width="1341" height="97" alt="image" src="https://github.com/user-attachments/assets/b2b4eacd-1c7c-4b5d-985f-8a9a91feb16d" />
 * Kubernetes pods
+
+
+  <img width="328" height="710" alt="image" src="https://github.com/user-attachments/assets/de84bc11-0507-40b1-818c-2c5d75e59fcd" />
 * OWASP ZAP scan
+
+<img width="1470" height="860" alt="image" src="https://github.com/user-attachments/assets/da9fca1b-d80c-4be9-a26e-97d9ad542107" />
 * Fail2Ban banning demonstration
+
+<img width="1470" height="860" alt="image" src="https://github.com/user-attachments/assets/cc98a277-95a4-4b96-8dc0-732b50a3f305" />
 * Loki logs in Grafana
 
 ---
