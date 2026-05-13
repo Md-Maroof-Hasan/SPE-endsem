@@ -75,7 +75,7 @@ pipeline {
     post {
 
    	 success {
-       		 mail to: 'md.maroofhsnz@gmail.com, person2@gmail.com',
+       		 mail to: 'md.maroofhsnz@gmail.com, piyushsinghcu@gmail.com',
        		 subject: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER}",
        		 body: """
 			Pipeline executed successfully.
@@ -89,7 +89,7 @@ pipeline {
     		}
 
    	 failure {
-        	mail to: 'md.amroofhsnz@gmail.com, person2@gmail.com',
+        	mail to: 'md.amroofhsnz@gmail.com, piyushsinghcu@gmail.com',
         	subject: "FAILURE: ${JOB_NAME} #${BUILD_NUMBER}",
         	body: """
 			Pipeline execution failed.
