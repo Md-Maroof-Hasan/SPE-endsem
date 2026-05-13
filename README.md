@@ -338,56 +338,7 @@ with:
 * Loki logs in Grafana
 
 
-
-.
-├── ansible
-│   ├── deploy.yml
-│   ├── inventory.ini
-│   ├── roles
-│   │   └── kubernetes
-│   │       ├── files
-│   │       │   └── k8s
-│   │       │       ├── audit-deployment.yml
-│   │       │       ├── auth-deployment.yml
-│   │       │       ├── hpa.yml
-│   │       │       ├── notes-deployment.yml
-│   │       │       └── services.yml
-│   │       └── tasks
-│   │           └── main.yml
-│   └── secrets.yml
-├── audit-service
-│   ├── app.py
-│   ├── Dockerfile
-│   └── requirements.txt
-├── auth-service
-│   ├── app.py
-│   ├── Dockerfile
-│   └── requirements.txt
-├── docker-compose.yml
-├── infrastructure-compose.yml
-├── Jenkinsfile
-├── logging
-│   ├── loki
-│   │   └── loki-config.yml
-│   └── promtail
-│       └── promtail-config.yml
-├── monitoring
-│   └── prometheus.yml
-├── monitoring-compose.yml
-├── nginx
-│   ├── logs
-│   │   ├── access.log
-│   │   └── error.log
-│   └── nginx.conf
-├── notes-service
-│   ├── app.py
-│   ├── Dockerfile
-│   └── requirements.txt
-├── README.md
-└── security
-    └── fail2ban
-        ├── jail.local
-        └── nginx-abuse.conf
+<img width="957" height="751" alt="image" src="https://github.com/user-attachments/assets/8852ef4d-f3ec-469f-8f7f-69bccb464f40" />
 
 * File structure 
 ---
