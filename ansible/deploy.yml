@@ -1,0 +1,8 @@
+- hosts: local
+  become: false
+  
+  vars_files:
+    - secrets.yml
+  
+  roles:
+    - kubernetes

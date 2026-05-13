@@ -1,0 +1,4 @@
+- name: Apply Kubernetes manifests
+  shell: kubectl apply -f {{ item }}
+  with_fileglob:
+    - "../files/k8s/*.yml"

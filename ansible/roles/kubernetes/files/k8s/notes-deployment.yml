@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: notes-service
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: notes-service
+
+  template:
+    metadata:
+      labels:
+        app: notes-service
+
+    spec:
+       containers:
+       - name: notes-service
+         image: project-notes-service:latest
+         imagePullPolicy: Never
+
+         ports:
+         - containerPort: 5002
+
+         resources:
+           requests:
+             cpu: "100m"
+             memory: "128Mi"
+
+           limits:
+             cpu: "200m"
+             memory: "256Mi"      
